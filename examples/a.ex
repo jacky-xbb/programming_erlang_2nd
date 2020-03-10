@@ -4,7 +4,7 @@ defmodule A do
   def loop(tag) do
     sleep()
     val = B.x()
-    IO.inspect val
+    IO.puts "Vsn3 #{tag} b:x() = #{val}"
     loop(tag)
   end
 

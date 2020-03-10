@@ -1,3 +1,3 @@
 defmodule B do
-  def x(), do: 1
+  def x(), do: 3
 end

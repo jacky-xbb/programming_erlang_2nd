@@ -69,6 +69,15 @@ defmodule LibMisc do
     end
   end
 
+  def on_exit(pid, fun) do
+    spawn(fn ->
+      ref = Process.monitor(pid)
+      receive do
+        {:DOWN, ^ref, :process, _object, reason} ->
+          fun.(reason)
+      end
+    end)
+  end
 
 end
 
