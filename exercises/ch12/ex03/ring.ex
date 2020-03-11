@@ -14,7 +14,7 @@ defmodule Ring do
     loop(next_pid)
   end
 
-  # recevice loop for the `start` process.
+  # Recevice loop for the `start` process.
   def ring_start(next_pid) do
     receive do
       {1, msg} ->
@@ -27,7 +27,7 @@ defmodule Ring do
     end
   end
 
-  # receive loop for the other processes.
+  # Receive loop for the other processes.
   def loop(next_pid) do
     receive do
       {num_loops, msg} ->

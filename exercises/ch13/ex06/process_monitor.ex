@@ -63,11 +63,12 @@ defmodule ProcessMonitor do
   end
 
   def test() do
-    monitor = Enum.to_list(1..4)
+    monitor = 1..4
     |> Enum.map(fn n -> fn  -> worker(n) end end)
     |> monitor_workers_init
 
     Logger.info("Monitor is: #{inspect monitor}")
+
 
     # Let monitored processes run for awhile
     Process.sleep(3000)
