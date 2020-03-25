@@ -79,5 +79,11 @@ defmodule LibMisc do
     end)
   end
 
+  def dump(term, file) do
+    out = file <> ".tmp"
+    IO.puts("** dumping to #{out}")
+    File.write!(out, term)
+    IO.inspect(term)
+  end
 end
 
