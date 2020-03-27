@@ -37,7 +37,7 @@ defmodule Id3V1 do
   def parse_v1_tag(<<"TAG",
     title :: binary-size(30),
     artist :: binary-size(30),
-    album :: binary-size(30),
+    album :: binary-size30),
     _year :: binary-size(4),
     _comment :: binary-size(30),
     _genre :: binary-size(1)>>) do
